@@ -17,11 +17,18 @@ namespace create_local_env {
         }
 
         public void DownloadInstalls() {
+            CreateInstallsDirectoryIfNotExists();
             dynamic[] arr = GetItemsFromResources();
             DownloadEachResource(arr);
         }
 
         #region [auxiliary]
+        private void CreateInstallsDirectoryIfNotExists() {
+            if (!Directory.Exists(configuration["installs_save_directory"])) {
+                Directory.CreateDirectory(configuration["installs_save_directory"]);
+            }
+        }
+
         private void DownloadEachResource(dynamic[] arr) {
             foreach (var x in arr) {
                 WebClient client = new WebClient();
@@ -40,8 +47,8 @@ namespace create_local_env {
         private Action<object, DownloadDataCompletedEventArgs> OnDownloadDataCompleted(string path_to_save) {
             return new Action<object, DownloadDataCompletedEventArgs>(
                 (x, y) => {
-                    File.WriteAllBytes(path_to_save, y.Result);
-                    Console.WriteLine("Git download completed");
+                    File.WriteAllBytes($"{path_to_save}.exe", y.Result);
+                    Console.WriteLine(path_to_save + "download completed");
                 }
             );
         }

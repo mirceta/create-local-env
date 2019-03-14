@@ -21,7 +21,8 @@ namespace create_local_env {
 
         void Start() {
             
-            new InstallsDownloader(configuration).DownloadInstalls();
+            //new InstallsDownloader(configuration).DownloadInstalls();
+            new PowershellProfileCompiler(configuration).WriteVarsAndToolsToProfile();
             
             Console.ReadLine();
         }

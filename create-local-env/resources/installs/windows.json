@@ -2,5 +2,25 @@
   {
     "name": "git",
     "link": "https://github.com/git-for-windows/git/releases/download/v2.21.0.windows.1/Git-2.21.0-32-bit.exe"
+  },
+  {
+    "name": "sublime",
+    "link": "https://download.sublimetext.com/Sublime%20Text%20Build%203200%20x64%20Setup.exe"
+  },
+  {
+    "name": "vs_code",
+    "link": "https://aka.ms/win32-x64-user-stable"
+  },
+  {
+    "name": "visual_studio_community",
+    "link": "https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15"
+  },
+  {
+    "name": "python372",
+    "link": "https://www.python.org/ftp/python/3.7.2/python-3.7.2-amd64.exe"
+  },
+  {
+    "name": "pycharm",
+    "link": "https://data.services.jetbrains.com/products/download?code=PCC&platform=windows"
   }
 ]
