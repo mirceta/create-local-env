@@ -1,0 +1,8 @@
+﻿$user = "[DISK]:\Users\[USER]"
+$documents = $user + "\Documents"
+$downloads = $user + "\Downloads"
+$desktop = $user + "\Desktop"
+$appdata = $user + "\AppData"
+$playground = $desktop + "\playground"
+$programfiles86 = "[DISK]:\Program Files (x86)"
+$programfiles = "[DISK]:\Program Files"

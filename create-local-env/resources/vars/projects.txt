@@ -1,0 +1,2 @@
+﻿$birokrat = 'D:\GIT\Kiki\Prg'
+$server = 'C:\Users\vucko\Desktop\playground\bironext\server'

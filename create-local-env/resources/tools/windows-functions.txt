@@ -1,0 +1,78 @@
+﻿function open {
+    Param(
+        [Parameter(Mandatory=$false)][string]$document
+    )
+    if ((get-item $document) -is [System.IO.DirectoryInfo]) {
+      explorer.exe $document
+    } else {
+      subl.exe $document
+    }
+}
+
+function touch([string]$name) {
+    new-item $name
+}
+
+function mysearchcur([string]$pattern) {
+    $a = Get-ChildItem | where Name -like $pattern
+    Write-Output $a
+}
+
+function mysearchcurrecurse([string]$pattern) {
+    Get-ChildItem -Recurse | where Name -like $pattern
+}
+
+function mysearchbypathrecurse([string]$startfolder, [string]$pattern) {
+    
+    Get-ChildItem $startFolder -Recurse | where Name -like $pattern
+
+}
+
+
+function mysearchbypath([string]$startfolder, [string]$pattern) {
+    
+    Get-ChildItem $startFolder | where Name -like $pattern
+
+}
+
+
+function MyFolderSizesNoRecurse {
+    Param(
+        [Parameter(Mandatory=$false)][string]$startFolder
+    )
+
+	$colItems = Get-ChildItem $startFolder | Where-Object {$_.PSIsContainer -eq $true} | Sort-Object
+	foreach ($i in $colItems)
+	{
+ 	   $subFolderItems = Get-ChildItem $i.FullName -recurse -force | Where-Object {$_.PSIsContainer -eq $false} | Measure-Object -property Length -sum | Select-Object Sum
+ 	   $i.FullName + " -- " + "{0:N2}" -f ($subFolderItems.sum / 1MB) + " MB"
+	}
+}
+
+function MyFolderSizes {
+    Param(
+        [Parameter(Mandatory=$false)][string]$startFolder
+    )
+	$colItems = (Get-ChildItem $startFolder -recurse | Where-Object {$_.PSIsContainer -eq $True} | Sort-Object)
+foreach ($i in $colItems)
+    {
+        $subFolderItems = (Get-ChildItem $i.FullName | Measure-Object -property length -sum)
+        $i.FullName + " -- " + "{0:N2}" -f ($subFolderItems.sum / 1MB) + " MB"
+    }
+}
+
+function FirstFewLines([string]$file, [int]$lines) {
+	Get-Content $file | select -First $lines
+}
+
+function LastFewLines([string]$file, [int]$lines) {
+	Get-Content $file | select -Last $lines
+}
+
+function FirstFewLinesDirectory([int]$lines) {
+	$colItems = (Get-ChildItem .)
+foreach ($i in $colItems)
+    {
+        FirstFewLines $i $lines
+    }
+}

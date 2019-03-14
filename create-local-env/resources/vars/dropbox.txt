@@ -1,0 +1,6 @@
+﻿$dropbox = "C:\Users\Kiki\Dropbox"
+$dbdocs = $dropbox + "\docs"
+$archives = $dbdocs + "\archives"
+$mng = $archives + "\mng"
+$knowledge = "C:\Users\Kiki\Dropbox\knowledge"
+$cheatsheets = $dropbox + "\docs\archives\cache\cheatsheets"
