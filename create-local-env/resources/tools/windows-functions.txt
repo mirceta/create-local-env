@@ -1,4 +1,18 @@
-﻿function startsln {
+﻿function clipwd {
+	Param(
+        [Parameter(Mandatory=$false)][string]$file
+    )
+	$a = pwd
+	$a = $a.ToString()
+	if ($file) {
+		$a + '/' + $file.Substring(2) | clip.exe
+	} else {
+		$a | clip.exe
+	}
+
+}
+
+function startsln {
 	Param(
         [Parameter(Mandatory=$false)][string]$path
     )
@@ -40,7 +54,7 @@ function mysearchcurrecurse([string]$pattern) {
 function mysearchbypathrecurse([string]$startfolder, [string]$pattern) {
     
     Get-ChildItem $startFolder -Recurse | where Name -like $pattern
-
+	s
 }
 
 
