@@ -1,4 +1,19 @@
-﻿function open {
+﻿function startsln {
+	Param(
+        [Parameter(Mandatory=$false)][string]$path
+    )
+
+	if ($path) {
+		if ((get-item $path) -is [System.IO.DirectoryInfo]) {
+			start $path/*.sln
+		}
+	}
+	else {
+		start ./*.sln
+	}
+}
+
+function open {
     Param(
         [Parameter(Mandatory=$false)][string]$document
     )
