@@ -1,4 +1,6 @@
-﻿function clipwd {
+﻿
+
+function clipwd {
 	Param(
         [Parameter(Mandatory=$false)][string]$file
     )
@@ -10,6 +12,23 @@
 		$a | clip.exe
 	}
 
+}
+
+function startand {
+	Param(
+        [Parameter(Mandatory=$false)][string]$folder
+    )
+
+	if ($folder) {
+		$a = pwd
+		$a = $a.ToString()
+		cd $folder
+		start '[android-studio-exe]'
+		cd $a
+	} 
+	else {
+		start '[android-studio-exe]'
+	}
 }
 
 function startsln {

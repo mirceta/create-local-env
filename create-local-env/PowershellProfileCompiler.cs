@@ -38,7 +38,10 @@ namespace create_local_env {
 
             Array.ForEach(Directory.GetFiles(Path.Combine(resource_root_path, "tools")), 
                          (x) => lines.AddRange(
-                             File.ReadAllLines(x).Select((y) => y.Replace("[EXPLORER]", configuration["EXPLORER"]).Replace("[CODE-EDITOR]", configuration["CODE-EDITOR"]))));
+                             File.ReadAllLines(x).Select((y) => 
+                                y.Replace("[EXPLORER]", configuration["EXPLORER"])
+                                 .Replace("[CODE-EDITOR]", configuration["CODE-EDITOR"])
+                                 .Replace("[android-studio-exe]", configuration["android-studio-exe"]))));
 
             // create the profile if this does not exist
             CreateProfilePathIfNotExists();
