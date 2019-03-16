@@ -1,1 +1,9 @@
 ﻿$pointcloudia = 'C:\Users\km\Documents\Unreal Projects\PointCloudia'
+
+$integratables_funcapp = 'C:\Users\km\Desktop\playground\Integratables\IntegratablesFuncApp'
+$create_local_env = 'C:\Users\km\Desktop\playground\create-local-env'
+$laz_preprocessor = 'C:\Users\km\Desktop\playground\LazPreprocessor'
+$MAG = $desktop + '/MAG'
+$overlap_compute = $MAG + '/OverlapCompute'
+$underground_filter = $MAG + "/UndergroundFilter"
+$cpprbnn = $MAG + "/CppRBNN"
