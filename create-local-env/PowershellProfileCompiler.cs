@@ -21,7 +21,7 @@ namespace create_local_env {
         public void WriteVarsAndToolsToProfile() {
 
             // backup profile if already exists
-            string profile_path = PowerShell.Execute("$PROFILE");
+            string profile_path = PowerShell.Execute("$PROFILE").Trim();
             if (File.Exists(profile_path)) {
                 string profilecontent = File.ReadAllText(profile_path);
                 File.WriteAllText(Path.Combine(Path.GetDirectoryName(profile_path), "profile_backup.txt"), profilecontent);
@@ -30,12 +30,17 @@ namespace create_local_env {
             // assemble the profile using the program's resources
             string vars_dir = Path.Combine(resource_root_path, "vars");
             List<string> lines = new List<string>();
-            Array.ForEach(Directory.GetFiles(Path.Combine(resource_root_path, "vars")), (x) => lines.AddRange(File.ReadAllLines(x).ToList()));
+
+            Array.ForEach(Directory.GetFiles(Path.Combine(resource_root_path, "vars")), 
+                         (x) => lines.AddRange(
+                             File.ReadAllLines(x).Select((y) => y.Replace("[USER]", configuration["USER"]).Replace("[DISK]", configuration["DISK"]))));
+
+
             Array.ForEach(Directory.GetFiles(Path.Combine(resource_root_path, "tools")), (x) => lines.AddRange(File.ReadAllLines(x).ToList()));
 
             // create the profile if this does not exist
             CreateProfilePathIfNotExists();
-            File.WriteAllLines(PowerShell.Execute("$PROFILE"), lines);
+            File.WriteAllLines(profile_path, lines);
         }
 
         #region [auxiliary]
