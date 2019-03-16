@@ -7,3 +7,6 @@ $MAG = $desktop + '/MAG'
 $overlap_compute = $MAG + '/OverlapCompute'
 $underground_filter = $MAG + "/UndergroundFilter"
 $cpprbnn = $MAG + "/CppRBNN"
+
+$and_integratables = 'C:\Users\km\Desktop\playground\create-local-env/\Users\km\Desktop\playground\Integratables\android\'
+$and_bironext = 'C:\Users\km\Desktop\playground\birokrat/bironext\'
