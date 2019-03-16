@@ -36,7 +36,9 @@ namespace create_local_env {
                              File.ReadAllLines(x).Select((y) => y.Replace("[USER]", configuration["USER"]).Replace("[DISK]", configuration["DISK"]))));
 
 
-            Array.ForEach(Directory.GetFiles(Path.Combine(resource_root_path, "tools")), (x) => lines.AddRange(File.ReadAllLines(x).ToList()));
+            Array.ForEach(Directory.GetFiles(Path.Combine(resource_root_path, "tools")), 
+                         (x) => lines.AddRange(
+                             File.ReadAllLines(x).Select((y) => y.Replace("[EXPLORER]", configuration["EXPLORER"]).Replace("[CODE-EDITOR]", configuration["CODE-EDITOR"]))));
 
             // create the profile if this does not exist
             CreateProfilePathIfNotExists();

@@ -18,9 +18,9 @@ function open {
         [Parameter(Mandatory=$false)][string]$document
     )
     if ((get-item $document) -is [System.IO.DirectoryInfo]) {
-      explorer.exe $document
+      [EXPLORER] $document
     } else {
-      subl.exe $document
+      [CODE-EDITOR] $document
     }
 }
 

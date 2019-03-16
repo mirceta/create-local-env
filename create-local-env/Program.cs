@@ -23,7 +23,8 @@ namespace create_local_env {
             
             //new InstallsDownloader(configuration).DownloadInstalls();
             new PowershellProfileCompiler(configuration).WriteVarsAndToolsToProfile();
-            
+
+            Console.WriteLine("Execution successful, press any key to exit.");
             Console.ReadLine();
         }
     }    
