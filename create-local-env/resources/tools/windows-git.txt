@@ -1,0 +1,52 @@
+﻿function gfull {
+	Param(
+        [Parameter(Mandatory=$true)][string]$message,
+		[Parameter(Mandatory=$false)][string]$branch
+    )
+	git status
+	git add -A
+	git commit -m '$message'
+	if ($branch) {
+		git push origin $branch
+	}
+}
+
+function gs {
+    git status
+}
+
+function ga {
+	git add -A
+}
+
+function gc($message) {
+	git commit -m '$message'
+}
+
+function gl {
+	git log --oneline
+}
+
+function gpush($branch) {
+	git push origin $branch
+}
+
+function gpull($branch) {
+	git pull origin $branch
+}
+
+function gi {
+	git init
+}
+
+function gcheckoutb ($branch) {
+	git checkout -b $branch
+}
+
+function gcheckout ($branch) {
+	git checkout $branch
+}
+
+function gb {
+	git branch
+}
