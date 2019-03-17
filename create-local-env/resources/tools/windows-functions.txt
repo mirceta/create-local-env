@@ -1,4 +1,6 @@
-﻿
+﻿function startvm ($vmname) {
+	mstsc $vmname
+}
 
 function clipwd {
 	Param(
