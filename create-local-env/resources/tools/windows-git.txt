@@ -1,4 +1,9 @@
-﻿function gfull {
+﻿function gbranchtoclip {
+	 $b = git branch | Select-String -Pattern '\*'
+	 $b.ToString().Substring(2) | clip.exe
+}
+
+function gfull {
 	Param(
         [Parameter(Mandatory=$true)][string]$message,
 		[Parameter(Mandatory=$false)][string]$branch

@@ -1,6 +1,4 @@
-﻿
-
-function clipwd {
+﻿function clipwd {
 	Param(
         [Parameter(Mandatory=$false)][string]$file
     )
