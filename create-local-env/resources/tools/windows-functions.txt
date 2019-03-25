@@ -1,5 +1,4 @@
-
-﻿function startvm ($vmname) {
+function startvm ($vmname) {
 	mstsc $vmname
 }
 

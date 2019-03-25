@@ -3,6 +3,17 @@
 	 $b.ToString().Substring(2) | clip.exe
 }
 
+function gfulltocurrbranch {
+	# side effect: clip changed
+
+	Param(
+        [Parameter(Mandatory=$true)][string]$message
+    )
+
+	$branch = gbranchtoclip
+	gfull $message $branch
+}
+
 function gfull {
 	Param(
         [Parameter(Mandatory=$true)][string]$message,
