@@ -1,4 +1,9 @@
-﻿function clipwd {
+
+﻿function startvm ($vmname) {
+	mstsc $vmname
+}
+
+function clipwd {
 	Param(
         [Parameter(Mandatory=$false)][string]$file
     )
