@@ -11,6 +11,7 @@ function gfulltocurrbranch {
     )
 
 	$branch = gbranchtoclip
+	$branch
 	gfull $message $branch
 }
 
