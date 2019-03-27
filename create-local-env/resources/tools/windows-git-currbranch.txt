@@ -1,0 +1,21 @@
+﻿function gfullcurr {
+	# side effect: clip changed
+
+	Param(
+        [Parameter(Mandatory=$true)][string]$message
+    )
+
+	$branch = gcurrbranch
+	$branch
+	gfull $message $branch
+}
+
+function gpushcurr {
+	$branch = gcurrbranch
+	gpush $branch
+}
+
+function gpullcurr {
+	$branch = gcurrbranch
+	gpull $branch
+}

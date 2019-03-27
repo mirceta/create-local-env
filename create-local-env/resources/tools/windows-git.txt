@@ -23,18 +23,6 @@ function gbranchtoclip {
 	 gcurrbranch | clip.exe
 }
 
-function gfulltocurrbranch {
-	# side effect: clip changed
-
-	Param(
-        [Parameter(Mandatory=$true)][string]$message
-    )
-
-	$branch = gcurrbranch
-	$branch
-	gfull $message $branch
-}
-
 function gfull {
 	Param(
         [Parameter(Mandatory=$true)][string]$message,
@@ -46,44 +34,4 @@ function gfull {
 	if ($branch) {
 		git push origin $branch
 	}
-}
-
-function gs {
-    git status
-}
-
-function ga {
-	git add -A
-}
-
-function gc($message) {
-	git commit -m '$message'
-}
-
-function gloneline {
-	git log --oneline
-}
-
-function gpush($branch) {
-	git push origin $branch
-}
-
-function gpull($branch) {
-	git pull origin $branch
-}
-
-function gi {
-	git init
-}
-
-function gcheckoutb ($branch) {
-	git checkout -b $branch
-}
-
-function gcheckout ($branch) {
-	git checkout $branch
-}
-
-function gb {
-	git branch
 }
