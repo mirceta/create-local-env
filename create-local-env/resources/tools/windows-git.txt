@@ -1,4 +1,20 @@
-﻿function gcurrbranch {
+﻿function startslncd {
+	Param(
+			[Parameter(Mandatory=$false)][string]$path
+		)
+
+		if ($path) {
+			if ((get-item $path) -is [System.IO.DirectoryInfo]) {
+				cd $path
+				startsln $path
+			}
+		}
+		else {
+			startsln
+		}
+}
+
+function gcurrbranch {
 	$b = git branch | Select-String -Pattern '\*'
 	$b.ToString().Substring(2)
 }
