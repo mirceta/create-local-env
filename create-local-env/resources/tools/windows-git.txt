@@ -44,7 +44,7 @@ function gc($message) {
 	git commit -m '$message'
 }
 
-function gl {
+function gloneline {
 	git log --oneline
 }
 
