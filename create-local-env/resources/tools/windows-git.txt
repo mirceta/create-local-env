@@ -35,3 +35,12 @@ function gfull {
 		git push origin $branch
 	}
 }
+
+function gcheckout {
+	Param(
+			[Parameter(Mandatory=$true)][string]$index
+		)
+	$branches = git branch
+	$arr = $branches -split '\n' | where {$_}
+	git checkout $arr[$index].Trim()
+}
