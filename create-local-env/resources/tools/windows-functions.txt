@@ -1,3 +1,15 @@
+function startpych {
+	Param(
+			[Parameter(Mandatory=$false)][string]$folder
+		)
+
+	if ($folder) {
+		pycharm64.exe $folder
+	} else {
+		pycharm64.exe
+	}
+}
+
 function startvm ($vmname) {
 	mstsc $vmname
 }
