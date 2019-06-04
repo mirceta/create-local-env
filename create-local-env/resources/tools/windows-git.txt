@@ -36,6 +36,19 @@ function gfull {
 	}
 }
 
+function gfullnoverify {
+	Param(
+        [Parameter(Mandatory=$true)][string]$message,
+		[Parameter(Mandatory=$false)][string]$branch
+    )
+	git status
+	git add -A
+	git commit -m $message --no-verify
+	if ($branch) {
+		git push origin $branch
+	}
+}
+
 function gcheckout {
 	Param(
 			[Parameter(Mandatory=$true)][string]$index

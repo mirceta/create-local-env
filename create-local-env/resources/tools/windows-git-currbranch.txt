@@ -2,12 +2,18 @@
 	# side effect: clip changed
 
 	Param(
-        [Parameter(Mandatory=$true)][string]$message
+        [Parameter(Mandatory=$true)][string]$message,
+		[Parameter(Mandatory=$false)][string]$noverify
     )
 
 	$branch = gcurrbranch
 	$branch
-	gfull $message $branch
+	if ($noverify) {
+		gfullnoverify $message $branch
+	} else {
+		gfull $message $branch
+	}
+	
 }
 
 function gpushcurr {
