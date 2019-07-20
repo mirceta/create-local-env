@@ -1,3 +1,11 @@
+function renametermwindow {
+	Param(
+				[Parameter(Mandatory=$true)][string]$newname
+			)
+
+		$host.UI.RawUI.WindowTitle = $newname
+}
+
 function startpych {
 	Param(
 			[Parameter(Mandatory=$false)][string]$folder
