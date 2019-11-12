@@ -1,0 +1,6 @@
+﻿$supportvserver = ""
+$supportvgui = ""
+$bironextserver = ""
+$biawebhook = ""
+$biagui = ""
+$biaserver = ""

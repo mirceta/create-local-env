@@ -1,3 +1,10 @@
+function envarlist {
+	Param(
+			[Parameter(Mandatory=$false)][string]$searchstring
+		)
+		dotnet {{{utils}}} envarlist $searchstring
+}
+
 function startpych {
 	Param(
 			[Parameter(Mandatory=$false)][string]$folder
