@@ -1,0 +1,4 @@
+﻿$proj_supportv = "C:\Users\vucko\Desktop\playground\birokrat\BiroSupporTV\"
+$proj_bironext = "C:\Users\vucko\Desktop\playground\bironext\"
+$proj_biroinvoiceassistant = "C:\Users\vucko\Desktop\playground\biroinvoiceassistant\"
+$proj_createlocalenv = "C:\Users\vucko\Desktop\playground\create-local-env\"

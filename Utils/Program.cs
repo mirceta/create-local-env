@@ -31,13 +31,13 @@ namespace Utils {
         private static void envvarlist(string searchstring) {
             string profile_path = PowerShell.Execute("$PROFILE").Trim();
             string[] lines = File.ReadAllLines(profile_path);
-            Console.WriteLine(lines.Length);
             string[] found_lines = lines.Where(
                 (x) => {
                     if (x.Contains("$") && x.Contains(searchstring))
                         return true;
                     return false;
                 }).ToArray();
+            found_lines.ToList().Sort();
             found_lines.ToList().ForEach((x) => Console.WriteLine(x));
         }
     }

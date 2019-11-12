@@ -1,12 +1,12 @@
-﻿$pointcloudia = 'C:\Users\km\Documents\Unreal Projects\PointCloudia'
+﻿$pointcloudia = 'C:\Users\[USER]\Documents\Unreal Projects\PointCloudia'
 
-$integratables_funcapp = 'C:\Users\km\Desktop\playground\Integratables\IntegratablesFuncApp'
-$create_local_env = 'C:\Users\km\Desktop\playground\create-local-env'
-$laz_preprocessor = 'C:\Users\km\Desktop\playground\LazPreprocessor'
+$integratables_funcapp = 'C:\Users\[USER]\Desktop\playground\Integratables\IntegratablesFuncApp'
+$create_local_env = 'C:\Users\[USER]\Desktop\playground\create-local-env'
+$laz_preprocessor = 'C:\Users\[USER]\Desktop\playground\LazPreprocessor'
 $MAG = $desktop + '/MAG'
 $overlap_compute = $MAG + '/OverlapCompute'
 $underground_filter = $MAG + "/UndergroundFilter"
 $cpprbnn = $MAG + "/CppRBNN"
 
-$and_integratables = 'C:\Users\km\Desktop\playground\Integratables\android'
-$and_bironext = 'C:\Users\km\Desktop\playground\birokrat/bironext\'
+$and_integratables = 'C:\Users\[USER]\Desktop\playground\Integratables\android'
+$and_bironext = 'C:\Users\[USER]\Desktop\playground\birokrat/bironext\'
