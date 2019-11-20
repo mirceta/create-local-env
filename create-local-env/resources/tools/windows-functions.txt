@@ -1,8 +1,16 @@
+
 function envarlist {
 	Param(
 			[Parameter(Mandatory=$false)][string]$searchstring
 		)
 		dotnet {{{utils}}} envarlist $searchstring
+
+function renametermwindow {
+	Param(
+				[Parameter(Mandatory=$true)][string]$newname
+			)
+
+		$host.UI.RawUI.WindowTitle = $newname
 }
 
 function startpych {
