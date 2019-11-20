@@ -53,19 +53,16 @@ namespace create_local_env {
         #region [auxiliary]
         private void CreateProfilePathIfNotExists() {
             string profile_path = PowerShell.Execute("$PROFILE");
-            string[] parts = profile_path.Split("/\\");
+            string[] parts = profile_path.Split("\\");
 
             Func<int, string> assemble_parts = (max) => {
-                string acc = "";
-                for (int i = 0; i < max; i++) {
-                    acc += parts[i];
-                }
-                return acc;
+                return string.Join('\\', parts.Take(max));
             };
 
             for (int i = 1; i < parts.Length - 2; i++) {
-                if (!Directory.Exists(assemble_parts(parts.Length - i))) {
-                    Directory.CreateDirectory(assemble_parts(parts.Length - i));
+                string str = assemble_parts(parts.Length - i);
+                if (!Directory.Exists(str)) {
+                    Directory.CreateDirectory(str);
                     Console.WriteLine($"Created directory {assemble_parts(parts.Length - i)}");
                 }
             }

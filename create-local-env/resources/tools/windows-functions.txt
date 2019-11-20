@@ -1,9 +1,9 @@
-
 function envarlist {
 	Param(
 			[Parameter(Mandatory=$false)][string]$searchstring
 		)
 		dotnet {{{utils}}} envarlist $searchstring
+}
 
 function renametermwindow {
 	Param(
