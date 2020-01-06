@@ -35,5 +35,6 @@ function gcheckout ($branch) {
 }
 
 function gb {
-	git branch | % {$i++;"$($i-1) `t $_"}
+	git branch | % {$i++;"$($i-1) `t $_;"}
+	$i=0
 }
