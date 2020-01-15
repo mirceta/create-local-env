@@ -1,3 +1,29 @@
+function listrdps {
+	$b = mpwd
+	cd $playground/create-local-env-config/rdps
+	ls
+	cd $b
+}
+
+function startrdp {
+	Param(
+			[Parameter(Mandatory=$true)][string]$searchstring,
+			[Parameter(Mandatory=$true)][string]$height,
+			[Parameter(Mandatory=$true)][string]$width
+		)
+	mstsc.exe $playground/create-local-env-config/rdps/$searchstring.RDP  /h:$height /w:$width
+}
+
+
+
+
+
+
+
+
+
+
+
 function envarlist {
 	Param(
 			[Parameter(Mandatory=$false)][string]$searchstring
@@ -39,6 +65,20 @@ function clipwd {
 		$a + '/' + $file.Substring(2) | clip.exe
 	} else {
 		$a | clip.exe
+	}
+
+}
+
+function mpwd {
+	Param(
+        [Parameter(Mandatory=$false)][string]$file
+    )
+	$a = pwd
+	$a = $a.ToString()
+	if ($file) {
+		$a + '/' + $file.Substring(2)
+	} else {
+		$a
 	}
 
 }
