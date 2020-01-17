@@ -1,8 +1,26 @@
 function listrdps {
 	$b = mpwd
 	cd $playground/create-local-env-config/rdps
-	ls
+	$i=0
+	ls | % {$i++;"$($i-1) `t $_;"}
+	$i=0
 	cd $b
+}
+
+
+function startrdpi {
+	Param(
+			[Parameter(Mandatory=$true)][string]$index,
+			[Parameter(Mandatory=$true)][string]$height,
+			[Parameter(Mandatory=$true)][string]$width
+		)
+	$b = mpwd
+	cd $playground/create-local-env-config/rdps
+	$entries = ls
+	cd $b
+	$arr = $entries -split '\n' | where {$_}
+	$result = $arr[$index]
+	mstsc.exe $playground/create-local-env-config/rdps/$result /h:$height $w:width
 }
 
 function startrdp {
