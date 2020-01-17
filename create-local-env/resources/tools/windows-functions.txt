@@ -8,28 +8,25 @@ function listrdps {
 }
 
 
-function startrdpi {
+function srdpi {
 	Param(
-			[Parameter(Mandatory=$true)][string]$index,
+			[Parameter(Mandatory=$false)][string]$index = -1,
 			[Parameter(Mandatory=$false)][string]$height = 2000,
 			[Parameter(Mandatory=$false)][string]$width = 1920
 		)
-	$b = mpwd
-	cd $playground/create-local-env-config/rdps
-	$entries = ls
-	cd $b
-	$arr = $entries -split '\n' | where {$_}
-	$result = $arr[$index]
-	mstsc.exe $playground/create-local-env-config/rdps/$result /h:$height $w:width
-}
-
-function startrdp {
-	Param(
-			[Parameter(Mandatory=$true)][string]$searchstring,
-			[Parameter(Mandatory=$false)][string]$height = 2000,
-			[Parameter(Mandatory=$false)][string]$width = 1920
-		)
-	mstsc.exe $playground/create-local-env-config/rdps/$searchstring.RDP  /h:$height /w:$width
+	if ($index -eq -1) {
+		listrdps
+	}
+	else {
+		$b = mpwd
+		cd $playground/create-local-env-config/rdps
+		$entries = ls
+		cd $b
+		$arr = $entries -split '\n' | where {$_}
+		$result = $arr[$index]
+		mstsc.exe $playground/create-local-env-config/rdps/$result /h:$height /w:$width
+	}
+	
 }
 
 
