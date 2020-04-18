@@ -8,14 +8,22 @@ namespace Utils {
         static void Main(string[] args) {
 
             string program = args[0];
+            args = args.Skip(1).ToArray();
             switch (program) {
                 case "envarlist":
                     call_envvarlist(args);
+                    break;
+                case "startsln":
+                    call_startsln(args);
                     break;
                 default:
                     break;
 
             }
+        }
+
+        private static void call_startsln(string[] args) {
+            Startsln.Start(args);
         }
 
         private static void call_envvarlist(string[] args) {

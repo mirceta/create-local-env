@@ -1,4 +1,6 @@
-﻿$pointcloudia = 'C:\Users\[USER]\Documents\Unreal Projects\PointCloudia'
+
+$pointcloudia = 'C:\Users\km\Documents\Unreal Projects\PointCloudia'
+$workspacemag= 'E:\workspaces\LIDAR_WORKSPACE\augmentation'
 
 $integratables_funcapp = 'C:\Users\[USER]\Desktop\playground\Integratables\IntegratablesFuncApp'
 $create_local_env = 'C:\Users\[USER]\Desktop\playground\create-local-env'

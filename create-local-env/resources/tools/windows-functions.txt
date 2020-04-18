@@ -31,7 +31,47 @@ function srdpi {
 
 
 
+function startsln {
+	Param(
+        [Parameter(Mandatory=$false)][string]$arg0,
+		[Parameter(Mandatory=$false)][string]$arg1
+    )
 
+	if (-NOT $arg0) {
+		startslnold
+	}
+	if ($arg0 -eq '.') {
+		startslnold
+	}
+	if ($arg0 -eq 'help') {
+		dotnet {{{utils}}} startsln $arg0
+	}
+	if ($arg0 -eq 'list') {
+		dotnet {{{utils}}} startsln $arg0 $arg1
+	}
+	if ($arg0 -eq 'go') {
+		$result = & dotnet {{{utils}}} startsln $arg0 $arg1
+		startslnold $result
+	}
+	if ($arg0 -eq 'store') {
+		dotnet {{{utils}}} startsln $arg0 $arg1
+	}
+}
+
+function startslnold {
+	Param(
+        [Parameter(Mandatory=$false)][string]$path
+    )
+
+	if ($path) {
+		if ((get-item $path) -is [System.IO.DirectoryInfo]) {
+			start $path/*.sln
+		}
+	}
+	else {
+		start ./*.sln
+	}
+}
 
 
 
@@ -112,21 +152,6 @@ function startand {
 	} 
 	else {
 		start '[android-studio-exe]'
-	}
-}
-
-function startsln {
-	Param(
-        [Parameter(Mandatory=$false)][string]$path
-    )
-
-	if ($path) {
-		if ((get-item $path) -is [System.IO.DirectoryInfo]) {
-			start $path/*.sln
-		}
-	}
-	else {
-		start ./*.sln
 	}
 }
 
