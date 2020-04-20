@@ -1,3 +1,0 @@
-create-local-env;C:\Users\km\Desktop\playground\create-local-env
-server;C:\Users\km\Desktop\playground\birokrat\bironext\server
-mBills-main;C:\Users\km\Desktop\playground\birokrat\mBills-main
