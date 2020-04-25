@@ -18,7 +18,6 @@ namespace Utils {
                     break;
                 default:
                     break;
-
             }
         }
 
