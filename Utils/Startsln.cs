@@ -41,11 +41,11 @@ namespace Utils
 
                 case "list":
                     return List();
+                case "pwd":
+                    return Pwd(args[1]);
                 case "go":
                     return Go(args[1]);
                 case "store":
-                    NoSlnFileInCurrentDirectoryGuard();
-
                     string key = null;
                     if (args.Length > 1)
                     {
@@ -78,6 +78,22 @@ namespace Utils
             if (projectDictionary.ContainsKey(key))
             {
                 Directory.SetCurrentDirectory(projectDictionary[key]);
+                NoSlnFileInCurrentDirectoryGuard();
+                return projectDictionary[key];
+            }
+            else
+            {
+                throw new Exception("No such project");
+            }
+        }
+
+        static string Pwd(string key) {
+            ProjectRepositoryExistsGuard();
+
+            var projectDictionary = GetProjectDictionary();
+
+            if (projectDictionary.ContainsKey(key))
+            {
                 return projectDictionary[key];
             }
             else

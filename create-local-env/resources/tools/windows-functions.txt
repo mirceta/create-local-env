@@ -1,3 +1,7 @@
+function newpsh {
+	start-process powershell.exe
+}
+
 function listrdps {
 	$b = mpwd
 	cd $playground/create-local-env-config/rdps
@@ -57,7 +61,7 @@ function startsln {
 		dotnet {{{utils}}} startsln $arg0 $arg1
 	}
 	if ($arg0 -eq 'pwd') {
-		$result = & dotnet {{{utils}}} startsln go $arg1
+		$result = & dotnet {{{utils}}} startsln pwd $arg1
 		cd $result
 	}
 }
