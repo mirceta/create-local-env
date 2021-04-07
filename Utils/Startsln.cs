@@ -62,9 +62,10 @@ namespace Utils
         {
             ProjectRepositoryExistsGuard();
 
-            return string.Join("\n", File.ReadAllLines(projectsFile).Select(x => {
+            string[] s = File.ReadAllLines(projectsFile);
+            return string.Join("\n", s.Select(x => {
                 string[] parts = x.Split(";");
-                return parts[0] + string.Join("", Enumerable.Range(0, 30 - parts[0].Length).Select(y => " ").ToArray()) + parts[1];
+                return parts[0] + string.Join("", Enumerable.Range(0, Math.Max(30 - parts[0].Length, 0)).Select(y => " ").ToArray()) + parts[1];
             }));
         }
 

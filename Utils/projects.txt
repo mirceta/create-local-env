@@ -1,3 +1,12 @@
 create-local-env;C:\Users\km\Desktop\playground\create-local-env
 server;C:\Users\km\Desktop\playground\birokrat\bironext\server
 mBills-main;C:\Users\km\Desktop\playground\birokrat\mBills-main
+BiroInvoiceAssistant;C:\Users\km\Desktop\playground\birokrat\biroinvoiceassistant\BiroInvoiceAssistant
+tests;C:\Users\km\Desktop\playground\birokrat\biroinvoiceassistant\tests
+BiroTyplessIntegration;C:\Users\km\Desktop\playground\birokrat\bironext\BiroTyplessIntegration
+slovenscina-cc;C:\Users\km\Desktop\playground\slovenscina-cc
+BiroTyplessGui;C:\Users\km\Desktop\playground\birokrat\biroinvoiceassistant\gui\BiroTyplessGui
+backend;C:\Users\km\Desktop\playground\birokrat\resourcemanagementbirokrat\backend
+MachineStatusInfo;C:\Users\km\Desktop\playground\birokrat\birokratdemos\MachineStatusInfo
+BirokratNextNetCoreApiClient;C:\Users\km\Desktop\playground\birokrat\bironext\api_clients\BirokratNextNetCoreApiClient
+BironextWordpressIntegrationHub;C:\Users\km\Desktop\playground\bironext-woocommerce-integration\BironextWordpressIntegrationHub
