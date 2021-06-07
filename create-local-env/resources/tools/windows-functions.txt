@@ -1,3 +1,10 @@
+function getprocbyport {
+	Param(
+				[Parameter(Mandatory=$true)][string]$port = -1,
+			)
+		Get-Process -Id (Get-NetTCPConnection -LocalPort $port).OwningProcess
+}
+
 function newpsh {
 	start-process powershell.exe
 }

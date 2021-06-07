@@ -10,3 +10,4 @@ backend;C:\Users\km\Desktop\playground\birokrat\resourcemanagementbirokrat\backe
 MachineStatusInfo;C:\Users\km\Desktop\playground\birokrat\birokratdemos\MachineStatusInfo
 BirokratNextNetCoreApiClient;C:\Users\km\Desktop\playground\birokrat\bironext\api_clients\BirokratNextNetCoreApiClient
 BironextWordpressIntegrationHub;C:\Users\km\Desktop\playground\bironext-woocommerce-integration\BironextWordpressIntegrationHub
+devops;C:\Users\km\Desktop\playground\birokrat\bironext\deployment\devops
