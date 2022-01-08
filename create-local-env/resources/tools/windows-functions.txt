@@ -255,6 +255,8 @@ $left_most_screen = [System.Windows.Forms.Screen]::AllScreens|sort -Property {$_
 $x = $left_most_screen.WorkingArea.X
 $screen_width = $left_most_screen.WorkingArea.Width
 $screen_height = $left_most_screen.WorkingArea.Height
+
+# EXAMPLE OF USAGE: Set-Window -ProcessId $app.Id -X $x -Y $y -Width $screen_width -Height $h -Passthru 
 Function Set-Window {
     <#
         .SYNOPSIS
