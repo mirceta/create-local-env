@@ -251,10 +251,6 @@ foreach ($i in $colItems)
 
 
 Add-Type -AssemblyName System.Windows.Forms
-$left_most_screen = [System.Windows.Forms.Screen]::AllScreens|sort -Property {$_.WorkingArea.X}|select -First 1
-$x = $left_most_screen.WorkingArea.X
-$screen_width = $left_most_screen.WorkingArea.Width
-$screen_height = $left_most_screen.WorkingArea.Height
 
 # EXAMPLE OF USAGE: Set-Window -ProcessId $app.Id -X $x -Y $y -Width $screen_width -Height $h -Passthru 
 Function Set-Window {
@@ -379,4 +375,50 @@ Function Set-Window {
             }
         }
     }
+}
+
+Function OpenVSWorkspace {
+    $androidstudio = 'C:\Program Files\Android\Android Studio\bin\studio64.exe'
+    $chrome = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+    $vs = 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\devenv.exe'
+
+
+    # ANDROID SET
+    $android = Start-Process $androidstudio -passthru
+
+    # VISUAL STUDIO
+    $visualstudio = Start-Process $vs -passthru
+
+
+    # CHROME TWO WINDOWS
+    $chrome1 = Start-Process $chrome -passthru
+    $chrome2 = Start-Process $chrome -passthru
+
+    Start-Sleep -s 15
+
+
+
+    #### FILL LEFT SCREEN
+    $current_screen = [System.Windows.Forms.Screen]::AllScreens|sort -Property {$_.WorkingArea.X}|select -First 1
+    $x = $current_screen.WorkingArea.X
+    $screen_width = $current_screen.WorkingArea.Width
+    $screen_height = $current_screen.WorkingArea.Height
+    $halfwidth = $screen_width/2
+    $halfheight = $screenheight/2
+
+
+    Set-Window -ProcessId $android.Id -X $0 -Y 0 -Width $halfwidth -Height $screen_height -Passthru 
+    Set-Window -ProcessId visualstudio.Id -X $halfwidth -Y 0 -Width $halfwidth -Height $screen_height -Passthru  
+
+
+    #### FILL RIGHT SCREEN
+    $current_screen = [System.Windows.Forms.Screen]::AllScreens|sort -Property {$_.WorkingArea.X}|select -First 1
+    $x = $current_screen.WorkingArea.X
+    $screen_width = $current_screen.WorkingArea.Width
+    $screen_height = $current_screen.WorkingArea.Height
+    $halfwidth = $screen_width/2
+    $halfheight = $screenheight/2
+
+    Set-Window -ProcessId $chrome1.Id -X $tmp -Y 0 -Width $tmp -Height $screen_height -Passthru
+    Set-Window -ProcessId $chrome2.Id -X $tmp -Y 0 -Width $tmp -Height $screen_height -Passthru 
 }
