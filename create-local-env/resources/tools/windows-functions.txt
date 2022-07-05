@@ -5,6 +5,20 @@ function getprocbyport {
 		Get-Process -Id (Get-NetTCPConnection -LocalPort $port).OwningProcess
 }
 
+function grep {
+	Param(
+			[Parameter(Mandatory=$true)][string]$path,
+            [Parameter(Mandatory=$true)][string]$searchedforterm,
+		)
+	if ($index -eq -1) {
+		listrdps
+	}
+	else {
+		Select-String -Path  -Pattern $searchedforterm
+	}
+	
+}
+
 function newpsh {
 	start-process powershell.exe
 }
