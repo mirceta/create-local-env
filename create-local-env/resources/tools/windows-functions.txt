@@ -8,13 +8,13 @@ function getprocbyport {
 function grep {
 	Param(
 			[Parameter(Mandatory=$true)][string]$path,
-            [Parameter(Mandatory=$true)][string]$searchedforterm,
+            [Parameter(Mandatory=$true)][string]$searchedforterm
 		)
 	if ($index -eq -1) {
 		listrdps
 	}
 	else {
-		Select-String -Path  -Pattern $searchedforterm
+		Select-String -Path $path -Pattern $searchedforterm
 	}
 	
 }
