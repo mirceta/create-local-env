@@ -25,3 +25,13 @@ function gpullcurr {
 	$branch = gcurrbranch
 	gpull $branch
 }
+
+function gtagcurr {
+	Param(
+        [Parameter(Mandatory=$true)][string]$message
+    )
+
+	git tag -a $message -m "$message"
+	git push origin $message
+
+}

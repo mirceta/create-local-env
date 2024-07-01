@@ -16,7 +16,7 @@ function grep {
 	else {
 		Select-String -Path $path -Pattern $searchedforterm
 	}
-	
+	cd ..
 }
 
 function newpsh {

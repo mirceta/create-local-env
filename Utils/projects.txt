@@ -1,6 +1,6 @@
-server;C:\Users\km\Desktop\playground\bironext\server
-binancetrade;C:\Users\km\Desktop\playground\binancetrade
-devops;C:\Users\km\Desktop\playground\bironext\deployment\devops
-create-local-env;C:\Users\km\Desktop\playground\create-local-env
-birowoo;C:\Users\km\Desktop\playground\bironext-woocommerce-integration
-BirokratNextNetCoreApiClient;C:\Users\km\Desktop\playground\bironext\api_clients\BirokratNextNetCoreApiClient
+server;C:\Users\Administrator\Desktop\playground\bironext\server
+binancetrade;C:\Users\Administrator\Desktop\playground\binancetrade
+devops;C:\Users\Administrator\Desktop\playground\bironext\deployment\devops
+create-local-env;C:\Users\Administrator\Desktop\playground\create-local-env
+birowoo;C:\Users\Administrator\Desktop\playground\bironext-woocommerce-integration
+BirokratNextNetCoreApiClient;C:\Users\Administrator\Desktop\playground\bironext\api_clients\BirokratNextNetCoreApiClient
