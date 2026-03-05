@@ -14,6 +14,27 @@
 		}
 }
 
+function gbranchcleanup {
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$KeepBranch
+    )
+
+    Write-Host "Pruning remote tracking branches..." -ForegroundColor Cyan
+    git fetch --prune
+
+    Write-Host "Deleting local branches merged into '$KeepBranch'..." -ForegroundColor Cyan
+    git branch --merged $KeepBranch | ForEach-Object {
+        $branch = $_.Trim()
+
+        # Skip the branch we want to keep
+        if ($branch -ne $KeepBranch -and $branch -ne "* $KeepBranch") {
+            Write-Host "Removing branch: $branch" -ForegroundColor Yellow
+            git branch -d $branch
+        }
+    }
+}
+
 function gcurrbranch {
 	$b = git branch | Select-String -Pattern '\*'
 	$b.ToString().Substring(2)
@@ -42,6 +63,17 @@ function gfullnoverify {
 		[Parameter(Mandatory=$false)][string]$branch
     )
 	git status
+
+	 $currentBranch = git rev-parse --abbrev-ref HEAD
+
+    git fetch origin $currentBranch 2>$null
+    $behindCount = git rev-list --count "HEAD..origin/$currentBranch" 2>$null
+    if ($behindCount -and [int]$behindCount -gt 0) {
+        Write-Host "Remote branch 'origin/$currentBranch' has $behindCount commit(s) that are not in your local branch."
+        Write-Host "Please pull the latest changes before pushing. Aborting."
+        return
+    }
+
 	git add -A
 	git commit -m $message --no-verify
 	if ($branch) {

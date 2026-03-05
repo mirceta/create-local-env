@@ -4,3 +4,4 @@ devops;C:\Users\Administrator\Desktop\playground\bironext\deployment\devops
 create-local-env;C:\Users\Administrator\Desktop\playground\create-local-env
 birowoo;C:\Users\Administrator\Desktop\playground\bironext-woocommerce-integration
 BirokratNextNetCoreApiClient;C:\Users\Administrator\Desktop\playground\bironext\api_clients\BirokratNextNetCoreApiClient
+Terminals;C:\Users\Administrator\Desktop\playground\Terminals
