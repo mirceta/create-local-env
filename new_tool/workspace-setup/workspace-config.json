@@ -1,0 +1,82 @@
+{
+  "monitors": {
+    "left": { "offsetX": -3840, "offsetY": 0, "width": 3840, "height": 2160 },
+    "right": { "offsetX": 0, "offsetY": 0, "width": 3840, "height": 2160 }
+  },
+  "variables": {
+    "PROJECT_PATH": "C:\\Users\\Administrator\\Desktop\\playground\\prg"
+  },
+  "desktops": [
+    {
+      "name": "Development",
+      "apps": [
+        {
+          "name": "Google Chrome",
+          "executable": "chrome.exe",
+          "arguments": "",
+          "monitor": "left",
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 2160,
+          "delaySeconds": 3
+        },
+        {
+          "name": "Cursor IDE",
+          "executable": "C:\\Program Files\\cursor\\Cursor.exe",
+          "arguments": "{{PROJECT_PATH}}",
+          "monitor": "left",
+          "x": 1920,
+          "y": 0,
+          "width": 1920,
+          "height": 2160,
+          "delaySeconds": 4
+        },
+        {
+          "name": "Visual Studio",
+          "executable": "devenv.exe",
+          "arguments": "{{PROJECT_PATH}}\\bironext\\server\\server.sln",
+          "monitor": "right",
+          "x": 800,
+          "y": 0,
+          "width": 2000,
+          "height": 2160,
+          "delaySeconds": 5
+        },
+        {
+          "name": "PowerShell 1",
+          "executable": "powershell.exe",
+          "arguments": "-NoExit -Command Set-Location '{{PROJECT_PATH}}'",
+          "monitor": "right",
+          "x": 2800,
+          "y": 0,
+          "width": 1040,
+          "height": 720,
+          "delaySeconds": 2
+        },
+        {
+          "name": "PowerShell 2",
+          "executable": "powershell.exe",
+          "arguments": "-NoExit -Command Set-Location '{{PROJECT_PATH}}'",
+          "monitor": "right",
+          "x": 2800,
+          "y": 720,
+          "width": 1040,
+          "height": 720,
+          "delaySeconds": 2
+        },
+        {
+          "name": "PowerShell 3",
+          "executable": "powershell.exe",
+          "arguments": "-NoExit -Command Set-Location '{{PROJECT_PATH}}'",
+          "monitor": "right",
+          "x": 2800,
+          "y": 1440,
+          "width": 1040,
+          "height": 720,
+          "delaySeconds": 2
+        }
+      ]
+    }
+  ]
+}

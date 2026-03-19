@@ -108,6 +108,10 @@ function startslnold {
 
 
 
+function startworkspace {
+	Start-Process "[workspace-setup]"
+}
+
 function envarlist {
 	Param(
 			[Parameter(Mandatory=$false)][string]$searchstring

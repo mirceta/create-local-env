@@ -1,0 +1,52 @@
+Multi-Task Prompt Manager for Claude Code
+
+A Windows Forms (.NET) desktop application that helps you manage prompts across multiple parallel tasks when working with multiple Claude Code sessions (in VS Code, Cursor, or terminal).
+
+Problem: You have multiple high-level tasks on the same codebase. You work on each task in a separate copy of the repository, each with its own Claude Code session. You need a way to organize, edit, and quickly copy prompts to paste into the right session.
+
+Core concepts:
+- Task ($task_i): A high-level unit of work (e.g. "add authentication", "refactor database layer").
+- Repo copy: A path to a local copy of the repository assigned to a task.
+- Prompt ($prompt_j): A text instruction you want to send to Claude Code for a given task.
+- Agent label ($agent_k): A named label representing a Claude Code session for a task (e.g. "Agent 1 - VS Code", "Agent 2 - Terminal"). This is just a label for your own tracking — the app does not control the session.
+
+What the app does:
+- You create tasks, each with an assigned repo copy path.
+- You write prompts into each task.
+- You can edit prompts before using them.
+- When ready, you select a prompt and click "Copy to Clipboard", then paste it into your Claude Code session manually.
+- You can label which agent (session) you sent the prompt to — this is tracked in the GUI for your reference.
+- You can add/remove tasks, prompts, and agent labels at any time.
+
+What the app does NOT do:
+- It does not embed or control Claude Code sessions.
+- It does not communicate with any external process.
+- It is purely a prompt organizer with clipboard integration.
+
+UI layout:
+- Left panel: list of tasks (add/remove tasks).
+- Center panel: when a task is selected, shows:
+    - Repo copy path (editable text field)
+    - List of prompts for this task (add/edit/remove)
+    - List of agent labels for this task (add/remove)
+- When a prompt is selected:
+    - A large text box shows the full prompt text (editable)
+    - A dropdown to pick which agent label to associate with it
+    - A "Copy to Clipboard" button
+    - A status indicator showing whether this prompt has been sent and to which agent
+
+Platform:
+- Windows Forms (.NET 8)
+- Targets Windows 10/11 and Windows Server 2019+
+
+Data persistence:
+- Tasks, prompts, and agent labels are saved to a local JSON file so state survives app restarts.
+
+User story:
+1. You open the app.
+2. You create 3 tasks ("Auth", "DB Refactor", "UI Polish").
+3. You set repo paths for each (C:\repos\myapp-copy1, etc.).
+4. You write prompts into each task.
+5. You create agent labels in each task ("VS Code session", "Cursor session").
+6. You select a prompt, click Copy to Clipboard, switch to your Claude Code session, paste it.
+7. You mark which agent you sent it to for your own tracking.

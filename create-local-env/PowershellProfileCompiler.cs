@@ -43,6 +43,7 @@ namespace create_local_env {
                                  .Replace("[CODE-EDITOR]", configuration["CODE-EDITOR"])
                                  .Replace("[android-studio-exe]", configuration["android-studio-exe"])
                                  .Replace("{{{utils}}}", configuration["utils"])
+                                 .Replace("[workspace-setup]", configuration["workspace-setup"])
                                  )));
 
             // create the profile if this does not exist
