@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2026
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36717.8 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "create-local-env", "create-local-env\create-local-env.csproj", "{3A9B2714-DABC-4ED0-AE51-6EFA16173B0C}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "new_tool", "new_tool", "{7FD0B4F7-8E03-9D93-20F0-11ECCA275B1E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PromptManager", "new_tool\PromptManager\PromptManager.csproj", "{2422A43D-A9A9-44B6-83AA-EED82670A19C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkspaceSetup", "new_tool\workspace-setup\WorkspaceSetup\WorkspaceSetup.csproj", "{A9E660B0-5951-6914-0F0B-10187EE307AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,12 +73,25 @@ Global
 		{2422A43D-A9A9-44B6-83AA-EED82670A19C}.Release|x64.Build.0 = Release|Any CPU
 		{2422A43D-A9A9-44B6-83AA-EED82670A19C}.Release|x86.ActiveCfg = Release|Any CPU
 		{2422A43D-A9A9-44B6-83AA-EED82670A19C}.Release|x86.Build.0 = Release|Any CPU
+		{A9E660B0-5951-6914-0F0B-10187EE307AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9E660B0-5951-6914-0F0B-10187EE307AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9E660B0-5951-6914-0F0B-10187EE307AF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A9E660B0-5951-6914-0F0B-10187EE307AF}.Debug|x64.Build.0 = Debug|Any CPU
+		{A9E660B0-5951-6914-0F0B-10187EE307AF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A9E660B0-5951-6914-0F0B-10187EE307AF}.Debug|x86.Build.0 = Debug|Any CPU
+		{A9E660B0-5951-6914-0F0B-10187EE307AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9E660B0-5951-6914-0F0B-10187EE307AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9E660B0-5951-6914-0F0B-10187EE307AF}.Release|x64.ActiveCfg = Release|Any CPU
+		{A9E660B0-5951-6914-0F0B-10187EE307AF}.Release|x64.Build.0 = Release|Any CPU
+		{A9E660B0-5951-6914-0F0B-10187EE307AF}.Release|x86.ActiveCfg = Release|Any CPU
+		{A9E660B0-5951-6914-0F0B-10187EE307AF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2422A43D-A9A9-44B6-83AA-EED82670A19C} = {7FD0B4F7-8E03-9D93-20F0-11ECCA275B1E}
+		{A9E660B0-5951-6914-0F0B-10187EE307AF} = {7FD0B4F7-8E03-9D93-20F0-11ECCA275B1E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {202CBB8F-B8AD-4597-B5C4-7823638B170F}

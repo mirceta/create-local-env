@@ -22,8 +22,8 @@
           "delaySeconds": 3
         },
         {
-          "name": "Cursor IDE",
-          "executable": "C:\\Program Files\\cursor\\Cursor.exe",
+          "name": "Visual Studio Code",
+          "executable": "C:\\Program Files\\Microsoft VS Code\\Code.exe",
           "arguments": "{{PROJECT_PATH}}",
           "monitor": "left",
           "x": 1920,
